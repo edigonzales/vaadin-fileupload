@@ -1,9 +1,13 @@
 package com.example.application;
 
 import com.vaadin.flow.component.page.AppShellConfigurator;
+import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.theme.Theme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.filter.ForwardedHeaderFilter;
 
 /**
  * The entry point of the Spring Boot application.
@@ -12,6 +16,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * and some desktop browsers.
  *
  */
+@Push
+@Configuration
 @SpringBootApplication
 @Theme(value = "vaadin-fileupload")
 public class Application implements AppShellConfigurator {
@@ -20,4 +26,6 @@ public class Application implements AppShellConfigurator {
         SpringApplication.run(Application.class, args);
     }
 
+    
+    
 }
